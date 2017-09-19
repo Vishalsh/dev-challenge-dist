@@ -1,0 +1,17 @@
+{
+  "verbose": true,
+  "notify": true,
+  "roots": [
+    "es6"
+  ],
+  "testRegex": ".*.test.js",
+  "moduleDirectories": [
+    "node_modules",
+    "es6/test"
+  ],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "es6/**"
+  ],
+  "coverageDirectory": "reports/coverage"
+}

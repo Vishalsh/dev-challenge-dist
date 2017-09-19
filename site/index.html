@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Currency Pairs</title>
+    <link href="style.css"/>
+</head>
+<body>
+
+<main class="content">
+    <table>
+        <thead>
+        <tr>
+            <th>NAME</th>
+            <th>BEST BID</th>
+            <th>BEST ASK</th>
+            <th>OPEN BID</th>
+            <th>OPEN ASK</th>
+            <th>LAST CHANGE BID</th>
+            <th>LAST CHANGE ASK</th>
+            <th>MID PRICE TRENDS</th>
+        </tr>
+        </thead>
+
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <p>
+                <strong>Name: </strong>Vishal Sharma
+                <br/>
+                <strong>Email: </strong>vsharma@equalexperts.com
+            </p>
+        </li>
+        <li>
+            <strong>Anything you had to change or assume about this task to make your solution</strong>
+            <p>
+                Since the web socket is returning only a single currency pair data each time,
+                I am assuming if a pair is not present, create a new one, otherwise update the existing pair.
+                The table is sorted on the basis of how much the lastChangeBid has changed, no matter if it has
+                decreased or increased.
+            </p>
+        </li>
+        <li>
+            <strong>A high level description of your approach</strong>
+            <p>
+                I have tried to follow the component based architecture approach using vanilla js.
+                The solution consist of Forex class which uses the CurrencyPair class for each row.
+                The Forex returns the new string template to be drawn as html each time the data is updated.
+            </p>
+        </li>
+        <li>
+            <strong>If you added any other development-time steps, what they are, why you added them and how to run
+                them</strong>
+            <p>
+                I have used jest as a testing framework. please run <strong>npm test</strong> to run
+                the tests. It will also show the test coverage.
+            </p>
+        </li>
+        <li>
+            <strong>Which libraries/fralivemeworks you would have liked to have used (if any), and how they would have
+                made
+                the result better</strong>
+            <p>
+                I would have liked to use react to solve this problem. The reason behind is the performance as it relies
+                on virtual
+                dom to update the dom and takes care about the which part is needed to be updated and just change that
+                only.
+                Since in this problem, we need to update the dom every second to update the data, react would have been
+                a useful library.
+                Also, the component based architecture also would have worked well creating different components for
+                table, table-row and each sprkline.
+            </p>
+        </li>
+    </ul>
+
+</main>
+<script src="stomp.js"></script>
+<script src="sparkline.js"></script>
+<script src="bundle.js"></script>
+</body>
+
+</html>
