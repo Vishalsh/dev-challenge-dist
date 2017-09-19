@@ -12,6 +12,13 @@ npm install
 npm start
 ```
 
+To run the tests
+
+```
+npm test
+```
+
+
 from within this directory.  This will start a development server (using webpack)
 that supports hot reloading but also provides a stomp/ws endpoint providing fake
 fx updates.
