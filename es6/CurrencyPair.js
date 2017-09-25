@@ -1,18 +1,15 @@
-import {fixDecimalPoints, splitStringInTwo} from './utils';
+import {fixDecimalPoints, splitStringInTwo, copyObject} from './utils';
 
 const MAX_MID_PRICES_COUNT = 30;
 
 class CurrencyPair {
   constructor(data) {
-    for (let key in data) {
-      this[key] = data[key];
-    }
-
+    copyObject(this, data);
     this.midPrices = [(data.bestBid + data.bestAsk) / 2];
   }
 
   update(data) {
-    Object.assign(this, data);
+    copyObject(this, data);
     this.setMidPrices();
   }
 

@@ -9,4 +9,12 @@ const splitStringInTwo = (s) => {
   return `${str.substring(0, halfLength)} - ${str.substring(halfLength)}`
 };
 
-export {fixDecimalPoints, splitStringInTwo};
+const copyObject = (obj1, obj2) => {
+  for (let key in obj2) {
+    if (obj2.hasOwnProperty(key)) {
+      obj1[key] = obj2[key];
+    }
+  }
+};
+
+export {fixDecimalPoints, splitStringInTwo, copyObject};
