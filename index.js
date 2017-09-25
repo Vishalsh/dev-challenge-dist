@@ -16,11 +16,11 @@
   });
 
   function connectCallback() {
-    client.subscribe(UPDATED_PRICE_URL, (response) => {
+    client.subscribe(UPDATED_PRICE_URL, function (response) {
       renderingElement.innerHTML = response.body ? forex.render(JSON.parse(response.body)) : '<p>Please check the connection</p>';
 
-      forex.currencyPairs.forEach((currencyPair) => {
-        Sparkline.draw(document.getElementById(`sparkLine_${currencyPair.name}`), currencyPair.midPrices, {width: 250});
+      forex.currencyPairs.forEach(function (currencyPair) {
+        Sparkline.draw(document.getElementById('sparkLine_' + currencyPair.name), currencyPair.midPrices, {width: 250});
       });
     });
   }

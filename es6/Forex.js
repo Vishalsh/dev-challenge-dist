@@ -6,9 +6,9 @@ class Forex {
   }
 
   createCurrencyPair(currencyPairData) {
-    const currentCurrencyPair = this.currencyPairs.find((pair) => {
+    const currentCurrencyPair = this.currencyPairs.filter((pair) => {
       return pair.name === currencyPairData.name;
-    });
+    })[0];
 
     currentCurrencyPair ? currentCurrencyPair.update(currencyPairData) : this.currencyPairs.push(new CurrencyPair(currencyPairData));
   }
