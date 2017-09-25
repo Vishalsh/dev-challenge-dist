@@ -17,7 +17,7 @@ class Forex {
     this.createCurrencyPair(currencyPairData);
 
     return this.currencyPairs.sort((pair1, pair2) => {
-      return Math.abs(pair2.lastChangeBid) - Math.abs(pair1.lastChangeBid);
+      return pair2.lastChangeBid - pair1.lastChangeBid;
     }).reduce((rows, currencyPair) => {
       return rows + currencyPair.render();
     }, '');
